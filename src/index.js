@@ -1,7 +1,7 @@
 'use strict';
 
 import modal from './modules/modal';
-import two from './modules/two';
+import scrollUp from './modules/scrollUp';
 
 modal();
-two();
+scrollUp();
