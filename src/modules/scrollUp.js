@@ -14,7 +14,6 @@ const scrollUp = () => {
         let section = document.querySelector("#benefits").getBoundingClientRect().top;
             if (section == 0 || section < 0) {
                 if (arrowScroll.style.opacity == 0) { //если opacity 0, то воспроизвести анимацию 1 раз
-                console.log('ЯЯ');
                 animate({
                     duration: 500,
                     timing(timeFraction) {
