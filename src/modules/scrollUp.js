@@ -1,3 +1,5 @@
+import  {animate} from './helpers';
+
 const scrollUp = () => {
     const arrowScroll = document.querySelector(".smooth-scroll");
 
@@ -11,7 +13,18 @@ const scrollUp = () => {
     const trackScroll = () => {
         let section = document.querySelector("#benefits").getBoundingClientRect().top;
             if (section == 0 || section < 0) {
-            arrowScroll.style.opacity = 1;
+                if (arrowScroll.style.opacity == 0) { //если opacity 0, то воспроизвести анимацию 1 раз
+                console.log('ЯЯ');
+                animate({
+                    duration: 500,
+                    timing(timeFraction) {
+                        return timeFraction;
+                    },
+                    draw(progress) {
+                        arrowScroll.style.opacity = progress;
+                    }
+                });
+            }
         }
         if (section > 0) {
             arrowScroll.style.opacity = 0;
